@@ -207,11 +207,17 @@ SCOPES = ['https://www.googleapis.com/auth/webmasters.readonly']
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 TOKEN_PATH = os.path.join(APP_DIR, 'token.pickle')
 CREDENTIALS_PATH = os.path.join(APP_DIR, 'credentials.json')
+# OAuth設定（Streamlit secretsまたは環境変数から読み込み）
+def get_secret(key, default=''):
+        """Streamlit secretsまたは環境変数からシークレットを取得"""
+        try:
+                    return st.secrets.get(key, default)
+except Exception:
+        return os.environ.get(key, default)
 
-# OAuth設定（環境変数から読み込み）
-GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID', '')
-GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET', '')
-REDIRECT_URI = os.environ.get('REDIRECT_URI', 'https://keyword-analysis-rrzzyfm8ktruqrca4k7nfv.streamlit.app')
+GOOGLE_CLIENT_ID = get_secret('GOOGLE_CLIENT_ID', '')
+GOOGLE_CLIENT_SECRET = get_secret('GOOGLE_CLIENT_SECRET', '')
+REDIRECT_URI = get_secret('REDIRECT_URI', 'https://keyword-analysis-rrzzyfm8ktruqrca4k7nfv.streamlit.app')
 COLORS = {
     'blue': '#1a73e8',
     'red': '#ea4335',
