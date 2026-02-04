@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 from collections import Counter, defaultdict
 from itertools import combinations
-import json
+import jso
 import os
 from io import StringIO, BytesIO
 from datetime import datetime, timedelta
@@ -212,7 +212,7 @@ def get_secret(key, default=''):
         """Streamlit secretsまたは環境変数からシークレットを取得"""
         try:
                     return st.secrets.get(key, default)
-except Exception:
+        except Exception:
         return os.environ.get(key, default)
 
 GOOGLE_CLIENT_ID = get_secret('GOOGLE_CLIENT_ID', '')
