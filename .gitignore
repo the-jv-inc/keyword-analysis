@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Credentials (IMPORTANT: Never commit these)
+credentials.json
+token.pickle
+*.pickle
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/
+
+# Data files (user data)
+data/*.csv
+uploads/
+
+# Hidden files
+.fuse_hidden*
