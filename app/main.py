@@ -211,8 +211,7 @@ CREDENTIALS_PATH = os.path.join(APP_DIR, 'credentials.json')
 # OAuth設定（環境変数から読み込み）
 GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID', '')
 GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET', '')
-REDIRECT_URI = os.environ.get('REDIRECT_URI', 'https://keyword-analysis-nvxs.onrender.com/')
-
+REDIRECT_URI = os.environ.get('REDIRECT_URI', 'https://keyword-analysis-rrzzyfm8ktruqrca4k7nfv.streamlit.app')
 COLORS = {
     'blue': '#1a73e8',
     'red': '#ea4335',
