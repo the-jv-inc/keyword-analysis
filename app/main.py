@@ -213,7 +213,7 @@ def get_secret(key, default=''):
         try:
                     return st.secrets.get(key, default)
         except Exception:
-        return os.environ.get(key, default)
+                return os.environ.get(key, default)
 
 GOOGLE_CLIENT_ID = get_secret('GOOGLE_CLIENT_ID', '')
 GOOGLE_CLIENT_SECRET = get_secret('GOOGLE_CLIENT_SECRET', '')
